@@ -27,6 +27,19 @@ def get_last_page(driver):
     else:
         return (total // 10) + 1
 
+def get_books_info(driver):
+    time.sleep(1)
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    books = soup.select_one('div.resutl_list2').select('div.book_list2')
+    book_info = []
+    for book in books:
+        image = book.select_one('div.book_img_wrap img')['src']
+        title = book.select_one('div.top_title > h1 > span').text
+        state = book.select_one('div.top_title > ul:nth-child(4) > span').text.lstrip().replace('\n               ', ' ')
+        book_info.append({"image": image, "title": title, "state": state})
+    return book_info
+
 def get_books(word):
     driver = make_driver(word)
     last_page = get_last_page(driver)
