@@ -1,5 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
+from bs4 import BeautifulSoup
+import time
+
 def make_driver(word):
     driver = webdriver.Chrome()
     driver.implicitly_wait(3)
@@ -11,5 +14,19 @@ def make_driver(word):
     driver.find_element_by_xpath('//*[@id="nav"]/div[1]/div[2]/div/div/button[2]').click()
     return driver
 
+def get_last_page(driver):
+    time.sleep(2)
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+    total = soup.select_one('#srch_category > div > div.srch_info > span.highlight').text
+    total = int(total)
+    if total == 0:
+        return 0
+    elif total % 10 == 0:
+        return total // 10
+    else:
+        return (total // 10) + 1
+
 def get_books(word):
     driver = make_driver(word)
+    last_page = get_last_page(driver)
