@@ -40,6 +40,15 @@ def get_books_info(driver):
         book_info.append({"image": image, "title": title, "state": state})
     return book_info
 
+def extract_books(driver, last_page):
+    books = get_books_info(driver)
+    for i in range(2, last_page + 1):
+        driver.find_element_by_xpath(f'//*[@id="wrap"]/div[2]/div[3]/input[{i + 2}]').click()
+        books.extend(get_books_info(driver))
+    return books
+
 def get_books(word):
     driver = make_driver(word)
     last_page = get_last_page(driver)
+    books = extract_books(driver, last_page)
+    return books
