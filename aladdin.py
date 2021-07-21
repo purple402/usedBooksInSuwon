@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def get_last_page(word):
-    response = requests.get("https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=UsedStore&KeyWord=piano&KeyTag=F50+B90")
+    response = requests.get(f"https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=UsedStore&KeyWord={word}&KeyTag=F50+B90")
     soup = BeautifulSoup(response.text, "html.parser")
     pages = soup.select_one('div.Search3_Pager')
     last_page = pages.select_one('div.numbox_last a')
