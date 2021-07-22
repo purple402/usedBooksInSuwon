@@ -39,5 +39,3 @@ def get_books(word):
     last_page = get_last_page(word)
     books = extract_books(word, last_page)
     return books
-
-get_books('python')
