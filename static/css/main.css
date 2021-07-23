@@ -1,0 +1,40 @@
+body {
+    background-image : url("../image/000049880004.jpg");
+    background-size: auto 100vh;
+    background-position: center top;
+    background-color: rgba(31, 28, 28, 0);
+    opacity: 0.8;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 150px;
+    text-shadow: 2px 2px 2px rgb(117, 117, 117);
+    font-size: 40px;
+}
+
+form {
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    height: 25px;
+}
+
+input {
+    width: 150px;
+    padding-left: 30px;
+}
+
+form > i {
+    position: relative;
+    left: 25px;
+}
+
+button {
+    margin-left: 5px;
+    height: 30px;
+}
