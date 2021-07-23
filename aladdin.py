@@ -17,6 +17,8 @@ def get_book_info(result):
     image = result.select_one('img')['src']
     title = result.select_one('div.ss_book_list b.bo3').text
     stores = result.select('div.usedshop_off_text2_box > a')
+    if stores == []:
+        return
     store_list = []
     for store in stores:
         store = store.get_text()
