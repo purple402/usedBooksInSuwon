@@ -23,7 +23,7 @@ def get_book_info(result):
     for store in stores:
         store = store.get_text()
         store_list.append(store)
-    return {"image": image, "title": title, "stores": store_list}
+    return {"image": image, "title": title, "store": store_list}
 
 def extract_books(word, last_page):
     books = []
