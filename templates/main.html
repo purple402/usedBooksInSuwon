@@ -9,10 +9,46 @@
 </head>
 <body>
     <form action="/report" method="get">
-        <i class="fas fa-search"></i>
+        <span>가장 가까운 도서관은 어디인가요?</span>
+        <select class="library">
+            <option value="ALL">전체도서관</option>
+            <option value="SC">광교푸른숲도서관</option>
+            <option value="MX">광교홍재도서관</option>
+            <option value="MT">대추골도서관</option>
+            <option value="SE">망포글빛도서관</option>
+            <option value="SD">매여울도서관</option>
+            <option value="ME">바른샘도서관</option>
+            <option value="MM">반달어린이도서관</option>
+            <option value="MW">버드내도서관</option>
+            <option value="MH">북수원도서관</option>
+            <option value="MN">사랑샘도서관</option>
+            <option value="MG">서수원도서관</option>
+            <option value="MA">선경도서관</option>
+            <option value="MD">슬기샘도서관</option>
+            <option value="MC">영통도서관</option>
+            <option value="MZ">일월도서관</option>
+            <option value="MB">중앙도서관</option>
+            <option value="MF">지혜샘도서관</option>
+            <option value="MV">창룡도서관</option>
+            <option value="MI">태장마루도서관</option>
+            <option value="MU">한림도서관</option>
+            <option value="MK">한아름도서관</option>
+            <option value="MY">호매실도서관</option>
+            <option value="SB">화서다산도서관</option>
+            <option value="MP">화홍어린이도서관</option>
+            <option value="MO">희망샘도서관</option>
+        </select>
         <input type="text" name="searchword" required>
         <button><i class="fas fa-search"></i></button>
     </form>
+    <div class="bottomMessage">
+        <span>
+            선택하신 수원시 도서관과
+            알라딘 중고서점 수원점, 수원시청역점에서 책을 찾습니다.
+        </br>
+            책의 유무만 확인할 수 있습니다.
+        </span>
+    </div>
 </body>
 <script
       src="https://kit.fontawesome.com/6478f529f2.js"
