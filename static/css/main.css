@@ -1,40 +1,91 @@
-body {
-    background-image : url("../image/000049880004.jpg");
-    background-size: auto 100vh;
-    background-position: center top;
-    background-color: rgba(31, 28, 28, 0);
-    opacity: 0.8;
-    text-align: center;
+@font-face {
+    font-family: 'MapoPeacefull';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-h1 {
-    margin-top: 150px;
-    text-shadow: 2px 2px 2px rgb(117, 117, 117);
-    font-size: 40px;
+body {
+    /* background-image : url("../image/000049880004.jpg");
+    background-size: auto 100vh;
+    background-position: center top; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    font-family: 'MapoPeacefull';
+    background-color: #264022;
+}
+
+body::before {
+    content: "";
+    background-image: url("../image/000049880004.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.9;
 }
 
 form {
-    opacity: 0.9;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-input {
-    height: 25px;
-}
-
-input {
-    width: 150px;
-    padding-left: 30px;
-}
-
-form > i {
     position: relative;
-    left: 25px;
+    width: 440px;
+    margin-bottom: 10px;
+}
+
+form span {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 800;
+    color: #444059;
+    background: #C1D4D9;
+}
+
+.library {
+    margin-bottom: 10px;
+    font-family: 'MapoPeacefull';
+    font-size: 15px;
+}
+
+.library:focus-visible,
+input:focus-visible {
+    outline: none;
+}
+
+input {
+    height: 40px;
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 25px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 0px 5px #264022;
+    font-family: 'MapoPeacefull';
 }
 
 button {
-    margin-left: 5px;
-    height: 30px;
+    position: absolute;
+    right: -18px;
+    bottom: 9px;
+    background: none;
+    border: none;
+    color: #264022;
+    font-size: 17px;
+}
+
+.bottomMessage {
+    color: #F2F2F2;
+    text-align: center;
+    position: relative;
+}
+
+.bottomMessage span {
+    background: #264022;
 }
