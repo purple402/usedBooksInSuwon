@@ -80,6 +80,10 @@ button {
     font-size: 17px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .bottomMessage {
     color: #F2F2F2;
     text-align: center;
