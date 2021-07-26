@@ -3,12 +3,12 @@ from selenium.webdriver.support.ui import Select
 from bs4 import BeautifulSoup
 import time
 
-def make_driver(word):
+def make_driver(word, lib):
     driver = webdriver.Chrome()
     driver.implicitly_wait(3)
     driver.get('https://www.suwonlib.go.kr:8443/')
     select = Select(driver.find_element_by_class_name('select-all'))
-    select.select_by_value('SB')
+    select.select_by_value(lib)
     elem_search = driver.find_element_by_xpath('//*[@id="search"]')
     elem_search.send_keys(word)
     driver.find_element_by_xpath('//*[@id="nav"]/div[1]/div[2]/div/div/button[2]').click()
@@ -48,8 +48,8 @@ def extract_books(driver, last_page):
     driver.close()
     return books
 
-def get_books(word):
-    driver = make_driver(word)
+def get_books(word, lib):
+    driver = make_driver(word, lib)
     last_page = get_last_page(driver)
     books = extract_books(driver, last_page)
     return books

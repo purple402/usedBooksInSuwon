@@ -12,12 +12,13 @@ def home():
 
 @app.route('/report')
 def report():
+    lib = request.args.get('lib')
     searchword = request.args.get('searchword')
     books = []
     aladdin_books = get_books_aladdin(searchword)
-    lib_books = get_books_lib(searchword)
+    lib_books = get_books_lib(searchword, lib)
     books = aladdin_books + lib_books
-    return render_template('report.html', searchword = searchword, books = books)
+    return render_template('report.html', searchword = searchword, lib = lib, books = books)
 
 if __name__ == '__main__':
     app.run(host="127.0.0.1", debug=True)
