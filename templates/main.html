@@ -10,7 +10,7 @@
 <body>
     <form action="/report" method="get">
         <span>가장 가까운 도서관은 어디인가요?</span>
-        <select class="library">
+        <select name="lib" class="library">
             <option value="ALL">전체도서관</option>
             <option value="SC">광교푸른숲도서관</option>
             <option value="MX">광교홍재도서관</option>
@@ -39,7 +39,7 @@
             <option value="MO">희망샘도서관</option>
         </select>
         <input type="text" name="searchword" required>
-        <button><i class="fas fa-search"></i></button>
+        <button type="submit"><i class="fas fa-search"></i></button>
     </form>
     <div class="bottomMessage">
         <span>
