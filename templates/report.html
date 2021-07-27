@@ -8,5 +8,30 @@
     <title>{{searchword}} : Used books in suwon</title>
 </head>
 <body>
+    <header>
+        수원에 있는 알라딘 중고서점과 {{lib}}도서관에서
+        </br>
+        {{searchword}}를 검색한 결과입니다
+    </header>
+    <table>
+        {% for book in books %}
+        <tr>
+            <td>
+                <img src="{{ book.image }}" style="width: 50px">
+            </td>
+            <td>
+                <div>{{ book.title }}</div>
+                <div style="color: red">
+                    {% for store in book.store %}
+                    {{ store }}
+                    {% endfor %}
+                </div>
+                <div style="color: blue">
+                    {{ book.state }}
+                </div>
+            </td>
+        </tr>
+            {% endfor %}
+    </table>
 </body>
 </html>
