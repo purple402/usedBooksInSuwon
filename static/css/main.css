@@ -6,9 +6,6 @@
 }
 
 body {
-    /* background-image : url("../image/000049880004.jpg");
-    background-size: auto 100vh;
-    background-position: center top; */
     display: flex;
     flex-direction: column;
     justify-content: center;
