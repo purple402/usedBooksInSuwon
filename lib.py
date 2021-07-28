@@ -36,8 +36,9 @@ def get_books_info(driver):
     for book in books:
         image = book.select_one('div.book_img_wrap img')['src']
         title = book.select_one('div.top_title > h1 > span').text
+        lib = book.select_one('div.book_contents_wrap > div.contents_wrap_top > div > ul:nth-child(3) > span:nth-child(1)').text
         state = book.select_one('div.top_title > ul:nth-child(4) > span').text.lstrip().replace('\n               ', ' ')
-        book_info.append({"image": image, "title": title, "state": state})
+        book_info.append({"image": image, "title": title, "lib" : lib, "state": state})
     return book_info
 
 def extract_books(driver, last_page):
