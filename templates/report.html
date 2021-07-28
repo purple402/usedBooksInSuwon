@@ -44,14 +44,18 @@
             </td>
             <td class="info">
                 <div>{{ book.title }}</div>
+                {% if book.store %}
                 <div style="color: red">
                     {% for store in book.store %}
                     {{ store }}
                     {% endfor %}
                 </div>
+                {% endif %}
+                {% if book.lib %}
                 <div style="color: blue">
-                    {{ book.state }}
+                   {{ book.lib }} | {{ book.state }}
                 </div>
+                {% endif %}
             </td>
         </tr>
             {% endfor %}
