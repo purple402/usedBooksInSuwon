@@ -40,9 +40,9 @@
         {% for book in books %}
         <tr>
             <td>
-                <img src="{{ book.image }}" style="width: 50px">
+                <img class="book-cover" src="{{ book.image }}">
             </td>
-            <td>
+            <td class="info">
                 <div>{{ book.title }}</div>
                 <div style="color: red">
                     {% for store in book.store %}
