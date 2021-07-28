@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'MapoPeacefull';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'MapoPeacefull';
+    background-color: #C1D4D9;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C1D4D9;
+}
+
+header i {
+    margin-right: 15px;
+}
+
+header p {
+    margin: 0px 10px;
+}
+
+.highlight {
+    background-color: #f8fa81;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    margin-left: 10px;
+}
+
+a img{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.link span {
+    font-size: 10px;
+}
+
+table {
+    margin-top: 70px;
+}
+
+.book-cover {
+    width: 100px;
+    margin-right: 15px;
+}
+
+td div {
+    margin-bottom: 10px;
+}
+
+td div:first-child {
+    font-size: 20px;
+}
+
+.info {
+    width: 500px;
+}
