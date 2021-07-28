@@ -9,9 +9,11 @@
 </head>
 <body>
     <header>
-        수원에 있는 알라딘 중고서점과 {{lib}}도서관에서
-        </br>
-        {{searchword}}를 검색한 결과입니다
+        <p>
+            수원에 있는 알라딘 중고서점과 {{lib}}도서관에서
+            </br>
+            <span class='highlight'>{{searchword}}</span>을(를) 검색한 결과입니다
+        </p>
     </header>
     <table>
         {% for book in books %}
