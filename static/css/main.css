@@ -15,6 +15,7 @@ body {
     background-color: #264022;
 }
 
+/* background */
 body::before {
     content: "";
     background-image: url("../image/000049880004.jpg");
@@ -27,6 +28,7 @@ body::before {
     opacity: 0.9;
 }
 
+/* form */
 form {
     display: flex;
     flex-direction: column;
@@ -81,6 +83,7 @@ button:hover {
     cursor: pointer;
 }
 
+/* message */
 .bottomMessage {
     color: #F2F2F2;
     text-align: center;
