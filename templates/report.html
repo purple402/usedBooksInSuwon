@@ -36,6 +36,11 @@
             <span>수원시도서관</span>
         </div>
     </header>
+    {% if books == [] %}
+    <div class="no-result">
+        검색 결과가 없습니다.
+    </div>
+    {% endif %}
     <table>
         {% for book in books %}
         <tr>

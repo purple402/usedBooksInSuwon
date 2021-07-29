@@ -56,8 +56,12 @@ a img{
     font-size: 10px;
 }
 
-table {
+.no-result, table {
     margin-top: 70px;
+}
+
+.no-result {
+    font-size: 20px;
 }
 
 .book-cover {
