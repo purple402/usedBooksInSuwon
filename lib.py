@@ -19,6 +19,7 @@ def get_last_page(driver):
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
     total = soup.select_one('#srch_category > div > div.srch_info > span.highlight').text
+    total = total.replace('\xa0', '').replace(',', '')
     total = int(total)
     if total == 0:
         return 0
