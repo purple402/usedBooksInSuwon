@@ -5,13 +5,16 @@ def get_last_page(word):
     response = requests.get(f"https://www.aladin.co.kr/search/wsearchresult.aspx?SearchTarget=UsedStore&KeyWord={word}&KeyTag=F50+B90")
     soup = BeautifulSoup(response.text, "html.parser")
     pages = soup.select_one('div.Search3_Pager')
-    if pages == None:
+    if pages is None:
         return 1
     else:
         last_page = pages.select_one('div.numbox_last a')
-        last_page = last_page.attrs['href']
-        last_page = last_page[-4:-2].replace("'", "")
-        return int(last_page)
+        if last_page is None:
+            return 1
+        else:
+            last_page = last_page.attrs['href']
+            last_page = last_page[-4:-2].replace("'", "")
+            return int(last_page)
 
 def get_book_info(result):
     image = result.select_one('img')['src']
