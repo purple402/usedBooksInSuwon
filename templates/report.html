@@ -52,13 +52,13 @@
                 {% if book.store %}
                 <div style="color: red">
                     {% for store in book.store %}
-                    {{ store }}
+                    알라딘 {{ store }}
                     {% endfor %}
                 </div>
                 {% endif %}
                 {% if book.lib %}
                 <div style="color: blue">
-                   {{ book.lib }} | {{ book.state }}
+                   {{i}} {{ book.lib }}도서관 | {{ book.state }}
                 </div>
                 {% endif %}
             </td>
