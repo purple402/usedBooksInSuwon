@@ -48,6 +48,7 @@ def extract_books(driver, last_page):
         return []
     books = get_books_info(driver)
     for i in range(2, last_page + 1):
+        print(f"scrapping lib page {i}")
         driver.find_element_by_xpath(f'//*[@id="wrap"]/div[2]/div[3]/input[{i + 2}]').click()
         books.extend(get_books_info(driver))
     driver.close()
